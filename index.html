@@ -1,142 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A layout example that shows off a responsive photo gallery.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
 
-    <title>geoffstevens8</title>
+  <title>geoffstevens8</title>
 
-
-
-
-<link rel="stylesheet" href="css/layouts/pure-min.css">
-
-
-
-
-
-
-
-
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/gallery-grid-old-ie.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/gallery-grid.css">
-    <!--<![endif]-->
-
-
-
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/gallery-old-ie.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/gallery.css">
-    <!--<![endif]-->
-
-
-
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 </head>
 <body>
 
+  <div class=container style="margin-top:5%">
+    <ul class="media-list">
 
-
-
-
-
-
-<div>
-    <div class="header">
-        <div class="pure-menu pure-menu-horizontal">
-            <a class="pure-menu-heading" href="">geoffstevens8</a>
-
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-select"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Blog</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-            </ul>
+      <li class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
+          </a>
         </div>
-    </div>
-
-    <div class="pure-g">
-        <div class="photo-box u-1 u-med-1-3 u-lrg-1-4">
-            <a href="https://github.com/geoffstevens8/Optimizing-Pedestrian-Crossing">
-                <img src="images/pedestrians.jpg"
-                     alt="Pedestrians">
-            </a>
-
-            <aside class="photo-box-caption">
-                <span>Optimizing Pedestrian Crossing</span>
-            </aside>
+        <div class="media-body">
+          <h4 class="media-heading">Geoff</h4>
+          <p> Hey, how's it going?</p>
         </div>
-        <!--
-        <div class="text-box u-1 u-med-2-3 u-lrg-3-4">
-            <div class="l-box">
-                <h1 class="text-box-head">geoffstevens8</h1>
-                <p class="text-box-subhead">Repositories</p>
+      </li>
+
+      <li class="media">
+        <div class="media-body" align="right">
+          <h4 class="media-heading">You</h4>
+          <p> What's the problem?</p>
+        </div>
+        <div class="media-right">
+          <a href="#">
+            <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
+          </a>
+        </div>
+      </li>
+
+      <li class="media">
+        <div class="media-body">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+              <div class="input-group">
+                <textarea type="text" class="form-control autoExpand" rows="1" data-min-rows='1' placeholder="" style="overflow:hidden"></textarea>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Send</button>
+                </span>
+              </div><!-- /input-group -->
             </div>
+          </div>
         </div>
-        -->
-        <div class="photo-box u-1 u-med-1-2 u-lrg-1-3">
-            <a href="https://github.com/geoffstevens8/Crowd-Behavior">
-                <img src="images/crowd.jpg"
-                     alt="Crowd">
-            </a>
-
-            <aside class="photo-box-caption">
-                <span>
-                    Crowd Behavior
-                </span>
-            </aside>
+        <div class="media-right">
+          <a href="#">
+            <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
+          </a>
         </div>
+      </li>
 
-        <div class="photo-box u-1 u-med-1-2 u-lrg-1-3">
-            <a href="https://github.com/geoffstevens8/Sleep-Data-Analysis">
-                <img src="images/sleep.jpg"
-                     alt="Sleep">
-            </a>
-
-            <aside class="photo-box-caption">
-                <span>
-                    Sleep Data Analysis
-                </span>
-            </aside>
-        </div>
-
-        <div class="photo-box photo-box-thin u-1 u-lrg-3-3">
-            <a href="https://github.com/geoffstevens8">
-                <img src="images/boston.jpg"
-                     alt="Boston">
-            </a>
-
-            <aside class="photo-box-caption">
-                <span>
-                    Profile
-                </span>
-            </aside>
-        </div>
-
-        <!--
-        <div class="u-1">
-            <div class="l-box">
-            </div>
-        </div>
-        -->
-    </div>
-
-    <div class="footer">
-    </div>
-</div>
-
-
-
-
-
+    </ul>
+  </div>
 
 </body>
 </html>
+
+<script>
+
+$(document)
+    .one('focus.autoExpand', 'textarea.autoExpand', function(){
+        var savedValue = this.value;
+        this.value = '';
+        this.baseScrollHeight = this.scrollHeight;
+        this.value = savedValue;
+    })
+    .on('input.autoExpand', 'textarea.autoExpand', function(){
+        var minRows = this.getAttribute('data-min-rows')|0, rows;
+        this.rows = minRows;
+        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
+        this.rows = minRows + rows;
+    });
+
+</script>
