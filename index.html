@@ -8,7 +8,40 @@
   <title>geoffstevens8</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='autosize/dist/autosize.js'></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+
+body {
+  background:#4A90E2
+}
+
+.respond {
+  width:100%;
+  overflow:hidden;
+  resize:none;
+  outline:none;
+  border-radius:6px;
+  box-shadow:2px 2px 8px rgba(0,0,0,.3);
+  border:0;
+}
+
+.test {
+  background-color: white
+}
+
+.chat {
+  outline:none;
+  border-radius:6px;
+  box-shadow:2px 2px 8px rgba(0,0,0,.3);
+  border:0;
+  padding: 10px;
+  background-color:white;
+  display: inline-block;
+}
+
+</style>
 
 </head>
 <body>
@@ -17,23 +50,31 @@
     <ul class="media-list">
 
       <li class="media">
-        <div class="media-left">
+        <div class="media-left media-bottom">
           <a href="#">
             <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
           </a>
         </div>
         <div class="media-body">
           <h4 class="media-heading">Geoff</h4>
-          <p> Hey, how's it going?</p>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="chat">Hey, how's it going?</p>
+            </div>
+          </div>
         </div>
       </li>
 
       <li class="media">
         <div class="media-body" align="right">
           <h4 class="media-heading">You</h4>
-          <p> What's the problem?</p>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+              <p class="chat">What's the problem?</p>
+            </div>
+          </div>
         </div>
-        <div class="media-right">
+        <div class="media-right media-bottom">
           <a href="#">
             <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
           </a>
@@ -44,16 +85,13 @@
         <div class="media-body">
           <div class="row">
             <div class="col-md-6 col-md-offset-6">
-              <div class="input-group">
-                <textarea type="text" class="form-control autoExpand" rows="1" data-min-rows='1' placeholder="" style="overflow:hidden"></textarea>
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Send</button>
-                </span>
-              </div><!-- /input-group -->
+              <div class="">
+                <textarea type="text" class="respond" rows="1" data-min-rows='1' placeholder=""></textarea>
+              </div>
             </div>
           </div>
         </div>
-        <div class="media-right">
+        <div class="media-right media-bottom">
           <a href="#">
             <img class="media-object" style="width:60px" src="images/profile.png" alt="...">
           </a>
@@ -68,18 +106,6 @@
 
 <script>
 
-$(document)
-    .one('focus.autoExpand', 'textarea.autoExpand', function(){
-        var savedValue = this.value;
-        this.value = '';
-        this.baseScrollHeight = this.scrollHeight;
-        this.value = savedValue;
-    })
-    .on('input.autoExpand', 'textarea.autoExpand', function(){
-        var minRows = this.getAttribute('data-min-rows')|0, rows;
-        this.rows = minRows;
-        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
-        this.rows = minRows + rows;
-    });
+autosize(document.querySelector('textarea'));
 
 </script>
